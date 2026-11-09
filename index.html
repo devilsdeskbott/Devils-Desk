@@ -1,1 +1,285 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070003">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Wishes">
+<title>Ask Me Anything 😈</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E😈%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Pirata+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070003;--card:#150209;--ink:#ffe3e3;--red:#ff1744;--ember:#ff6d00;--gold:#ffc46b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;min-height:100vh;overflow-x:hidden;background:radial-gradient(ellipse at 50% -10%,color-mix(in srgb,var(--red) 40%,#000) 0,var(--bg) 55%) fixed}
+body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:90px;background:linear-gradient(to top,color-mix(in srgb,var(--red) 65%,transparent),transparent);pointer-events:none;animation:glow 2.5s ease-in-out infinite alternate;z-index:0}
+@keyframes glow{to{opacity:.4}}
+.ember{position:fixed;bottom:-20px;font-size:18px;opacity:.7;animation:rise linear infinite;pointer-events:none;z-index:0}
+@keyframes rise{to{transform:translateY(-110vh) translateX(30px) rotate(40deg);opacity:0}}
+main{max-width:560px;margin:0 auto;padding:18px 16px 130px;position:relative;z-index:1}
+h1{font-family:'Metal Mania',cursive;font-weight:400;font-size:44px;text-align:center;margin:8px 0 0;color:var(--red);text-shadow:0 0 6px var(--red),0 0 24px var(--red);animation:flick 3s infinite}
+@keyframes flick{0%,92%,100%{opacity:1}94%{opacity:.6}96%{opacity:1}98%{opacity:.7}}
+.sub{text-align:center;font-family:'Pirata One',cursive;font-size:20px;color:var(--gold);margin:4px 0 14px;letter-spacing:1px}
+.horns{text-align:center;font-size:40px;margin:0}
+.moods{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.cat{background:linear-gradient(160deg,#1d0310,var(--card));border:1px solid #6b0f26;border-left:4px solid var(--red);border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 0 18px #ff174422}
+.cat h2{font-family:'Pirata One',cursive;font-weight:400;font-size:24px;margin:0;color:var(--ember);letter-spacing:1px}
+.cat small{color:#d98a96;display:block;margin:0 0 10px;font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--red);background:#0b0105;color:var(--ink);padding:8px 12px;border-radius:999px;font:600 13px Poppins,sans-serif;cursor:pointer;transition:.15s}
+.chip.on{background:linear-gradient(90deg,var(--red),var(--ember));border-color:var(--ember);box-shadow:0 0 14px var(--red);transform:scale(1.04)}
+.chip.on::before{content:"😈 "}
+textarea,input[type=password]{width:100%;background:#0b0105;color:var(--ink);border:1px solid #6b0f26;border-radius:12px;padding:12px;font:14px Poppins,sans-serif}
+.task{border:2px dashed var(--ember);border-radius:16px;padding:16px;margin:18px 0;background:#150209;box-shadow:0 0 22px #ff6d0033}
+.task h2{font-family:'Pirata One',cursive;font-weight:400;font-size:26px;color:var(--ember);margin:0 0 6px}
+#opts .chip{display:block;width:100%;text-align:left;margin:6px 0;border-radius:12px}
+.btn{display:block;width:100%;border:0;border-radius:999px;padding:15px;margin-top:10px;font:600 16px Poppins,sans-serif;color:#fff;background:linear-gradient(90deg,#b0002a,var(--red),var(--ember));box-shadow:0 0 24px var(--red);cursor:pointer;animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 34px var(--ember)}}
+.btn.alt{background:transparent;border:1px solid var(--gold);color:var(--gold);box-shadow:none;animation:none}
+.btn:disabled{opacity:.4;animation:none;cursor:not-allowed}
+#msg,#status,#wmsg,#bmsg{margin-top:8px;min-height:22px;font-weight:600;text-align:center}
+.ok{color:#7dffa8}.no{color:#ffb36b}
+.wheelbox{position:relative;width:min(300px,80vw);margin:14px auto}
+.wheelbox #wheel{transition:transform 4s cubic-bezier(.12,.7,.1,1);filter:drop-shadow(0 0 16px var(--red))}
+.ptr{position:absolute;left:50%;top:-16px;transform:translateX(-50%);font-size:32px;color:var(--gold);z-index:2;text-shadow:0 0 10px #000}
+.cart{position:fixed;left:0;right:0;bottom:0;z-index:5;background:#150209ee;border-top:1px solid var(--red);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));text-align:center;font-weight:600;backdrop-filter:blur(6px)}
+.hist{font-size:13px;color:#d98a96;white-space:pre-wrap;border-top:1px solid #4a0c1c;padding-top:8px;margin-top:8px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+#lock{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 20%,#4d0014,#050002);display:flex;align-items:center;justify-content:center;padding:24px;text-align:center}
+#lock .box{max-width:320px;width:100%}
+#lock h1{font-size:34px}
+</style>
+</head>
+<body>
+<div id="lock"><div class="box"><div style="font-size:56px">😈</div><h1>Say the secret word</h1><p class="sub">Only for my favourite sinner</p><input id="pin" type="password" inputmode="numeric" placeholder="••••" autocomplete="off"><button class="btn" id="unlockBtn">Enter 🔥</button><div id="lerr" class="no" style="margin-top:8px;min-height:22px"></div></div></div>
+<canvas id="confetti"></canvas>
+
+<main>
+<p class="horns">😈</p>
+<h1>Ask Me Anything</h1>
+<p class="sub" id="tag">Be naughty. Be greedy. Pick your sins 🔥</p>
+<div class="moods" id="moods"></div>
+<div id="cats"></div>
+
+<div class="cat">
+<h2>✍️ Your Own Sin</h2>
+<small>Whisper your wish... if you dare 😏</small>
+<textarea id="free" rows="3" placeholder="Tell me what your wicked heart wants..."></textarea>
+</div>
+
+<div class="task">
+<h2>🔥 One Last Dare, Miss Greedy</h2>
+<p>Guess right and unlock the <b>tip wheel</b>:</p>
+<p id="q"></p>
+<div id="opts"></div><input id="ans" type="hidden">
+<div id="msg"></div>
+<button class="btn alt" id="check">Lock my guess 💋</button>
+</div>
+
+<div class="task">
+<h2>🎰 Wheel of Greed</h2>
+<p>Up to 3 spins. Keep what you land on, or get greedy and spin again... but if the 3rd spin lands below ₹500, you walk away with <b>nothing</b> 😈</p>
+<div class="wheelbox"><div class="ptr">▼</div><div id="wheel"></div></div>
+<div id="wmsg">Win the dare above to unlock the wheel 🔒</div>
+<button class="btn" id="spinBtn" disabled>Spin 🎰</button>
+<button class="btn alt" id="keepBtn" style="display:none"></button>
+</div>
+
+<div class="task">
+<h2>💋 Bonus Dare of the Day</h2>
+<p id="dare"></p>
+<button class="btn alt" id="dareBtn">I did it ✅</button>
+<div id="bmsg"></div>
+</div>
+
+<button class="btn" id="send">😈 Send my sins to him</button>
+<div id="status"></div>
+<button class="btn alt" id="copy">Copy wish list</button>
+
+<div class="cat" style="margin-top:22px"><h2>📜 My Past Sins</h2><div class="hist" id="hist">Nothing yet.</div></div>
+<p style="text-align:center;font-size:12px;color:#a86a78">Tip: tap your browser's Share/Menu → "Add to Home Screen" to keep this like an app.</p>
+</main>
+<div class="cart" id="cart">🛍️ Cart: 0 wishes</div>
+
+<script>
+// ===== EDIT THESE =====
+const HER_NAME = "Jaan";
+const QUESTION = "What's my Favourite Feast? 😋";
+const OPTIONS = [["a","A Burger 🍔"],["b","Pizza 🍕"],["c","Juicy Mahi 🐟"],["d","Mahi, all of her, hot and juicy 🔥😈"]];
+const ANSWER_B64 = "ZA==";          // correct option letter in lowercase, base64 (d = ZA==)
+const PIN_HASH = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"; // SHA-256 of the secret word (this one = 1234)
+const WORKER_URL = "";              // your Cloudflare Worker link, e.g. https://wishes.yourname.workers.dev (no slash at end)
+const SEND_COOLDOWN_MIN = 10;       // minutes between sends
+// ======================
+
+// ---- helpers
+const $ = id => document.getElementById(id);
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const rand = a => a[Math.floor(Math.random()*a.length)];
+let ac;
+function beep(f,d,v){try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=f;g.gain.value=v||.05;o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch(e){}}
+function winSound(){[523,659,784,1047].forEach((f,i)=>setTimeout(()=>beep(f,.25,.08),i*130))}
+function confetti(){
+  const c=$('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+  const P=Array.from({length:140},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height*.5,s:4+Math.random()*6,vy:2+Math.random()*4,vx:-2+Math.random()*4,c:rand(['#ff1744','#ff6d00','#ffc46b','#fff','#ff80ab'])}));
+  const t0=Date.now();
+  (function f(){x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;x.fillStyle=p.c;x.fillRect(p.x,p.y,p.s,p.s*1.6)});if(Date.now()-t0<3200)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})();
+}
+
+// ---- lock screen
+async function sha(s){if(!window.crypto||!crypto.subtle)return PIN_HASH;const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(x=>x.toString(16).padStart(2,'0')).join('')}
+async function tryUnlock(){
+  if(await sha($('pin').value.trim())===PIN_HASH){$('lock').style.display='none';try{sessionStorage.setItem('ok','1')}catch(e){}}
+  else{$('lerr').textContent='Wrong word, sinner 😜';$('pin').value=''}
+}
+$('unlockBtn').onclick=tryUnlock;$('pin').onkeydown=e=>{if(e.key==='Enter')tryUnlock()};
+try{if(sessionStorage.getItem('ok')==='1')$('lock').style.display='none'}catch(e){}
+
+// ---- moods
+const MOODS=[["😈 Naughty","#ff1744","#ff6d00","Be naughty. Be greedy. Pick your sins 🔥"],["🍬 Sweet","#ff4081","#ffab40","Sweet tooth, sweeter wishes 🍬"],["🍕 Hungry","#ff6d00","#ffd600","Feed me and no one gets hurt 🍕"],["😴 Lazy","#7c4dff","#40c4ff","Do everything for me, lazy queen 😴"]];
+let mood=MOODS[0][0];
+MOODS.forEach(([n,a,b,t],i)=>{const e=document.createElement('button');e.className='chip'+(i?'':' on');e.textContent=n;e.onclick=()=>{mood=n;document.querySelectorAll('#moods .chip').forEach(x=>x.classList.remove('on'));e.classList.add('on');const r=document.documentElement.style;r.setProperty('--red',a);r.setProperty('--ember',b);$('tag').textContent=t};$('moods').appendChild(e)});
+
+// ---- categories + cart
+const CATS = [
+ ["🛒 Blinkit & Instamart","Midnight cravings, delivered in 10",["Chocolates","Ice cream","Midnight snacks","Flowers","Skincare","Makeup","Cold drinks","Wine glasses & candles"]],
+ ["🍕 Zomato & Swiggy","Feed me, mortal",["Candlelight dinner","Biryani","Momos","Desserts","Coffee date","Pizza night","Rolls & shawarma","Zomato Gold"]],
+ ["👗 Clothing & Fashion","Dress me up, then undress the bill 😏",["Dress","Kurti","Saree","Sneakers","Handbag","Perfume","Jewellery","Myntra haul","Meesho finds","Heels"]],
+ ["💄 Nykaa & Beauty","Look devilish",["Lipstick","Skincare set","Hair spa","Nail art","Salon day","Body lotion","Hair tools"]],
+ ["🎬 Netflix & Chill","Don't watch alone",["Movie night","Series binge","Popcorn + cuddles","Netflix plan","Prime Video","Hotstar","BookMyShow tickets","Spotify Premium"]],
+ ["📦 Amazon & Flipkart","Cart full, heart fuller",["Surprise gift","Gadgets","Books","Home stuff","Earbuds","Smartwatch","Phone cover","Teddy bear"]],
+ ["📱 Recharges & Bills","Keep me online",["Jio recharge","Airtel recharge","Vi recharge","DTH","Wi-Fi bill","Electricity bill","Gas cylinder","FASTag"]],
+ ["🚗 Rides & Trips","Take me away",["Uber ride","Ola ride","Rapido","Long drive","Weekend trip","OYO stay","Train tickets","Flight tickets","MakeMyTrip"]],
+ ["💆 Spa, Gym & Health","Pamper the goddess",["Spa day","Massage","Gym membership","Yoga class","PharmEasy order","Vitamins"]],
+ ["🔥 Sexy Outfits","Dress to tempt me 😈",["Bra","Panty set","Bikini","Lingerie set","Babydoll nightwear","Corset","Stockings","Silk robe","Swimsuit","Lace set"]],
+ ["💸 Cash & UPI","Direct hits",["Pocket money","PhonePe transfer","GPay surprise","Paytm top-up","Gift card"]]
+];
+const picked = new Set();
+function updCart(){$('cart').textContent='🛍️ Cart: '+picked.size+(picked.size===1?' wish':' wishes')+(picked.size?' · ready to send 😈':'')}
+CATS.forEach(([title,tag,items])=>{
+  const d=document.createElement('div');d.className='cat';
+  d.innerHTML='<h2>'+title+'</h2><small>'+tag+'</small><div class="chips"></div>';
+  items.forEach(it=>{
+    const b=document.createElement('button');b.className='chip';b.textContent=it;
+    b.onclick=()=>{const k=title+'|'+it;if(picked.has(k)){picked.delete(k);b.classList.remove('on')}else{picked.add(k);b.classList.add('on');beep(700,.06)}updCart()};
+    d.querySelector('.chips').appendChild(b);
+  });
+  $('cats').appendChild(d);
+});
+
+// ---- dare question
+$('q').textContent=QUESTION;
+OPTIONS.forEach(([k,t])=>{
+  const b=document.createElement('button');b.className='chip';b.textContent=k.toUpperCase()+')  '+t;
+  b.onclick=()=>{$('ans').value=k;$('opts').querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on')};
+  $('opts').appendChild(b);
+});
+let tries=0,won=false;
+$('check').onclick=()=>{
+  const a=$('ans').value,m=$('msg');
+  if(!a){m.className='no';m.textContent='Pick an option first 😜';return}
+  tries++;
+  if(btoa(a)===ANSWER_B64){won=true;m.className='ok';m.textContent='Correct! 🎉 The tip wheel is unlocked, you wicked genius.';unlockWheel();winSound();confetti()}
+  else{won=false;m.className='no';m.textContent='Wrong, sinner 😜 Try once more, '+HER_NAME.toLowerCase()+'.';beep(180,.3,.08)}
+};
+
+// ===== WHEEL OF GREED (edit odds here) =====
+const WHEEL=[100,200,300,400,500,600,700,800,900,1000];
+const SPIN1=[100,200,300,400];
+const SPIN2=[200,300,400,500];
+const LOSE3=[100,200,300,400];
+const THIRD_WIN_CHANCE=0.3;
+let finalTip=null,spinsUsed=0,spinning=false,unlocked=false,rot=0;
+const wl=$('wheel'),wmsg=$('wmsg'),spinBtn=$('spinBtn'),keepBtn=$('keepBtn');
+(function(){
+  let s='';
+  WHEEL.forEach((v,i)=>{
+    const a0=(i*36-90)*Math.PI/180,a1=((i+1)*36-90)*Math.PI/180;
+    const x0=150+150*Math.cos(a0),y0=150+150*Math.sin(a0),x1=150+150*Math.cos(a1),y1=150+150*Math.sin(a1);
+    s+='<path d="M150 150 L'+x0+' '+y0+' A150 150 0 0 1 '+x1+' '+y1+' Z" fill="'+(i%2?'#7a0019':'#d50032')+'" stroke="#ffc46b" stroke-width="2"/>';
+    s+='<text x="150" y="50" transform="rotate('+(i*36+18)+' 150 150)" text-anchor="middle" fill="#fff" font-size="19" font-weight="700" font-family="Poppins,sans-serif">₹'+v+'</text>';
+  });
+  wl.innerHTML='<svg viewBox="0 0 300 300" width="100%">'+s+'<circle cx="150" cy="150" r="16" fill="#150209" stroke="#ffc46b" stroke-width="3"/></svg>';
+})();
+function unlockWheel(){if(unlocked)return;unlocked=true;spinBtn.disabled=false;wmsg.className='';wmsg.textContent='Wheel unlocked 😈 Spin if you dare!'}
+function pickTarget(){if(spinsUsed===1)return rand(SPIN1);if(spinsUsed===2)return rand(SPIN2);return Math.random()<THIRD_WIN_CHANCE?500:rand(LOSE3)}
+spinBtn.onclick=()=>{
+  if(spinning||!unlocked||finalTip!==null||spinsUsed>=3)return;
+  spinning=true;spinBtn.disabled=true;keepBtn.style.display='none';spinsUsed++;
+  const t=pickTarget(),i=WHEEL.indexOf(t),fa=(360-(i*36+18)+(Math.random()-.5)*20+360)%360;
+  rot+=360*5+((fa-(rot%360))+360)%360;wl.style.transform='rotate('+rot+'deg)';wmsg.className='';wmsg.textContent='Spinning... 🔥';
+  for(let k=0;k<26;k++)setTimeout(()=>beep(900-k*18,.04,.04),Math.pow(k/26,1.6)*3900);
+  setTimeout(()=>{spinning=false;showResult(t)},4200);
+};
+function showResult(t){
+  if(spinsUsed<3){
+    wmsg.textContent='You landed on ₹'+t+' 😈 Keep it, or get greedy and spin again? ('+(3-spinsUsed)+' left)';
+    keepBtn.textContent='Keep ₹'+t+' 💸';keepBtn.style.display='block';spinBtn.textContent='Spin again 😈';spinBtn.disabled=false;
+    keepBtn.onclick=()=>{finalTip=t;keepBtn.style.display='none';spinBtn.style.display='none';wmsg.className='ok';wmsg.textContent='Smart girl! ₹'+t+' tip is yours 💸 Now send your wishes!';winSound();confetti()};
+  }else{
+    keepBtn.style.display='none';spinBtn.style.display='none';
+    if(t>=500){finalTip=500;wmsg.className='ok';wmsg.textContent='JACKPOT! ₹500 tip is yours 🎉😈';winSound();confetti()}
+    else{finalTip=0;wmsg.className='no';wmsg.textContent='Ouch, ₹'+t+'... greed got you. Nothing this time 😈';beep(160,.5,.08)}
+  }
+}
+
+// ---- bonus dare
+const DARES=["Send a cute pout selfie 🤳","Record a 10 sec voice note saying 'I'm greedy' 🎙️","Strike your best devil pose and send it 😈","Send a 15 sec dance clip 💃","Write a naughty one-liner for me ✍️","Wear red today and send proof ❤️","Send a heart emoji train, 20 hearts minimum 💗"];
+const today=Math.floor(Date.now()/864e5);
+const dare=DARES[today%DARES.length];
+$('dare').textContent=dare;
+let dareDone=false;
+$('dareBtn').onclick=()=>{dareDone=true;$('dareBtn').disabled=true;$('bmsg').className='ok';$('bmsg').textContent='Noted! Show him the proof 😘 He decides the bonus.';winSound()};
+
+// ---- message, history, sending
+function buildText(){
+  const lines=['😈 '+HER_NAME+"'s wish list 😈",'Mood: '+mood,''];
+  const by={};
+  picked.forEach(k=>{const [c,i]=k.split('|');(by[c]=by[c]||[]).push(i)});
+  Object.keys(by).forEach(c=>lines.push(c+': '+by[c].join(', ')));
+  const f=$('free').value.trim();
+  if(f)lines.push('✍️ Own wish: '+f);
+  if(!picked.size&&!f)lines.push('(nothing picked, only love 😘)');
+  lines.push('','🛍️ Cart: '+picked.size+' wishes');
+  const sel=$('ans').value,o=OPTIONS.find(x=>x[0]===sel);
+  lines.push('🔥 Dare: '+QUESTION,'Her guess: '+(o?sel.toUpperCase()+') '+o[1]:'(skipped)'),'Tries: '+tries+(won?' ✅ correct':''));
+  lines.push('Spins used: '+spinsUsed+'/3','Tip: '+(finalTip===null?(won?'(not claimed yet)':'(locked)'):(finalTip>0?'₹'+finalTip+' due 💸':'₹0, greed got her 😈')));
+  lines.push('💋 Bonus dare: '+dare+' — '+(dareDone?'she says DONE ✅':'not done'));
+  return lines.join('\n');
+}
+function showHist(){
+  let h=[];try{h=JSON.parse(store.get('hist')||'[]')}catch(e){}
+  $('hist').textContent=h.length?h.slice(-5).reverse().map(x=>x.t+'\n'+x.s).join('\n\n'):'Nothing yet.';
+}
+function saveHist(){
+  let h=[];try{h=JSON.parse(store.get('hist')||'[]')}catch(e){}
+  const s=picked.size?Array.from(picked).map(k=>k.split('|')[1]).join(', '):($('free').value.trim()||'—');
+  h.push({t:new Date().toLocaleString(),s:s+(finalTip?' · tip ₹'+finalTip:'')});store.set('hist',JSON.stringify(h.slice(-20)));showHist();
+}
+showHist();
+
+const st=$('status');
+$('send').onclick=async()=>{
+  const last=+store.get('lastSend')||0,wait=SEND_COOLDOWN_MIN*60000-(Date.now()-last);
+  if(wait>0){st.className='no';st.textContent='Easy, tiger 😈 Wait '+Math.ceil(wait/60000)+' min before sending again.';return}
+  const text=buildText();
+  if(WORKER_URL){
+    st.className='';st.textContent='Sending to him... 🔥';
+    try{
+      const r=await fetch(WORKER_URL+'/send',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+      const j=await r.json();
+      if(j.ok){store.set('lastSend',Date.now());saveHist();st.className='ok';st.textContent='Sent! He knows your sins now 😈';winSound();return}
+    }catch(e){}
+    st.className='no';st.textContent='Direct send failed, opening Telegram instead...';
+  }
+  store.set('lastSend',Date.now());saveHist();
+  window.open('https://t.me/share/url?url='+encodeURIComponent(location.href.split('#')[0])+'&text='+encodeURIComponent(text),'_blank');
+};
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(buildText());st.className='ok';st.textContent='Copied! Paste it in Telegram 💌'}catch(e){prompt('Copy this:',buildText())}};
+
+for(let i=0;i<16;i++){
+  const h=document.createElement('div');h.className='ember';h.textContent=['🔥','😈','💋','✨'][i%4];
+  h.style.left=Math.random()*100+'vw'
